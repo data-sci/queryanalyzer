@@ -1,0 +1,11 @@
+1000	170.197.107.35	Opera/9.80 (Windows NT 6.1; WOW64; U; pt) Presto/2.10.229 Version/11.62	14/Jul/2012:00:11:39 -0700	obama
+1001	170.214.158.154	Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:25.0) Gecko/20100101 Firefox/25.0	14/Jul/2012:00:03:25 -0700	obama
+1002	170.214.158.154	Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:25.0) Gecko/20100101 Firefox/25.0	14/Jul/2012:00:14:11 -0700	movies
+1003	170.214.158.154	Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:25.0) Gecko/20100101 Firefox/25.0	14/Jul/2012:00:26:28 -0700	zombies
+1004	170.214.158.154	Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:25.0) Gecko/20100101 Firefox/25.0	14/Jul/2012:00:27:36 -0700	google
+1005	204.214.124.103	Mozilla/5.0 (Windows NT 6.2; rv:22.0) Gecko/20130405 Firefox/22.0	14/Jul/2012:00:23:11 -0700	news
+1006	204.214.124.103	Mozilla/5.0 (Windows NT 6.2; rv:22.0) Gecko/20130405 Firefox/22.0	14/Jul/2012:00:41:54 -0700	rock music
+1007	204.214.124.103	Mozilla/5.0 (Windows NT 6.2; rv:22.0) Gecko/20130405 Firefox/22.0	14/Jul/2012:00:59:35 -0700	films
+1008	187.180.107.69	Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)	14/Jul/2012:00:17:42 -0700	films
+1009	204.214.90.69	Opera/9.80 (Windows NT 6.1; WOW64; U; pt) Presto/2.10.229 Version/11.62	14/Jul/2012:00:10:37 -0700	news
+1010	204.214.90.69	Opera/9.80 (Windows NT 6.1; WOW64; U; pt) Presto/2.10.229 Version/11.62	14/Jul/2012:00:16:02 -0700	movies
