@@ -1,0 +1,16 @@
+1000   www.obama.com
+1000   www.nydailynews.com/topics/Barack%20Obama‎
+1001   en.wikipedia.org/wiki/Barack_Obama
+1002   www.imdb.com
+1003   en.wikipedia.org/wiki/Zombie
+1004   google.com
+1005   www.foxnews.com
+1006   en.wikipedia.org/wiki/Rock_music
+1007   www.imdb.com
+1008   www.totalfilm.com
+1009   www.bbc.co.uk/news
+1010   movies.yahoo.com
+1011   www.rock.com
+1012   en.wikipedia.org/wiki/Rock_music
+1013   www.mtv.com/music
+1014   www.imdb.com

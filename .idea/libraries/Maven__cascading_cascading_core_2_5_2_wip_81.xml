@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: cascading:cascading-core:2.5.2-wip-81">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/cascading/cascading-core/2.5.2-wip-81/cascading-core-2.5.2-wip-81.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/cascading/cascading-core/2.5.2-wip-81/cascading-core-2.5.2-wip-81-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/cascading/cascading-core/2.5.2-wip-81/cascading-core-2.5.2-wip-81-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

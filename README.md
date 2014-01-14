@@ -1,6 +1,6 @@
 Installation Guide
 
-1. Install Hadoop MRv1
+1. Install Hadoop MRv1, Maven
 2. Download queryanalyzer
      git clone https://github.com/data-sci/queryanalyzer.git
 3. Open queryanalyzer usin IDEA (File - Import Project). Choose pom.xml to open queryanalyzer.

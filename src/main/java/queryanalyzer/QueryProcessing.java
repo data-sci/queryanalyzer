@@ -23,9 +23,7 @@ import queryanalyzer.query.aggregation.SessionCountBuffer;
 
 import java.util.Properties;
 
-/**
- * User: frontijer
- */
+
 public class QueryProcessing {
     public static void main(String[] args) {
 
@@ -35,7 +33,7 @@ public class QueryProcessing {
         Tap inQueryTap = new Hfs(new TextDelimited(queryField, false, "\t"), inQueryPath);
 
         //input url data
-        String inUrlPath = "/home/hadoop/workspace/projects/queryanalyzer/resources/analyzer/url.txt";
+        String inUrlPath = "/home/hadoop/workspace/projects/queryanalyzer/resources/analyzer/clicks.txt";
         Fields urlField = new Fields("uid", "url");
         Tap inUrlTap = new Hfs(new TextDelimited(urlField, false, "   "), inUrlPath);
 
@@ -52,7 +50,7 @@ public class QueryProcessing {
         Tap outAvrgReqTap = new Hfs(new TextDelimited(false,"\t"),outAvrgReq, SinkMode.REPLACE);
 
         //output top urls and the qieries
-        String outTopUrl = "/home/hadoop/workspace/projects/queryanalyzer/resources/analizer/output/topUrl";
+        String outTopUrl = "/home/hadoop/workspace/projects/queryanalyzer/resources/analyzer/output/topUrl";
         Tap outTopUrlTap = new Hfs(new TextDelimited(false,"\t"),outTopUrl, SinkMode.REPLACE);
 
         //reading from input
@@ -68,11 +66,6 @@ public class QueryProcessing {
         //processing average count queries in session
         Pipe avgQ = new GroupBy("average queries", queries, new Fields("ip","browser"), new Fields("time"), false);
         avgQ = new Every(avgQ, new Fields("ip","time"), new SessionCountBuffer(),Fields.RESULTS);
-        //avgQ = new Each(avgQ, DebugLevel.VERBOSE, new Debug());
-        //Fields temp = new Fields("temp");//for using AverageBy I add temp fields
-        //Insert insertFunction = new Insert(temp,"temp");
-        //avgQ = new Each(avgQ, insertFunction, Fields.ALL);
-        //avgQ = new Each(avgQ, DebugLevel.VERBOSE, new Debug());
         avgQ = new AverageBy(avgQ, new Fields("session"), new Fields("count"), new Fields("average"));
         avgQ = new Discard(avgQ, new Fields("session"));
         avgQ = new Each(avgQ, DebugLevel.VERBOSE, new Debug());
@@ -93,13 +86,13 @@ public class QueryProcessing {
         topU = new Every(topU, Fields.FIRST, new First(Fields.ARGS, 10), Fields.ARGS);
 
         FlowDef flowDef = FlowDef.flowDef()
-                //.addSource(clicks, inUrlTap)
+                .addSource(clicks, inUrlTap)
                 .addSource(queries, inQueryTap)
                 .addTailSink(topQ, outTopQyeryTap)
-                //.addTailSink(avgQ, outAvrgReqTap)
+                .addTailSink(avgQ, outAvrgReqTap)
                 .addTailSink(timeActivity, outActiveTimeTap)
-                //.addTailSink(topU, outTopUrlTap)
-                ;
+                .addTailSink(topU, outTopUrlTap);
+
         flowDef.setDebugLevel( DebugLevel.VERBOSE );
         getHadoopFlowConnector().connect(flowDef)
                 .writeDOT("dot/queryanalyzer/query.dot");

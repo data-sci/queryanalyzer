@@ -15,16 +15,12 @@ import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Katsiaryna Ramanouskaya
- * Date: 12/18/13
- * Time: 5:09 PM
- * To change this template use File | Settings | File Templates.
  */
 public class SessionCountBuffer extends BaseOperation implements Buffer {
 
     public  SessionCountBuffer()
     {
-        super(1, new Fields("count","session"));
+        super(1, new Fields("count", "session"));
     }
 
     public  SessionCountBuffer(Fields fieldsDeclaration)
@@ -47,18 +43,18 @@ public class SessionCountBuffer extends BaseOperation implements Buffer {
 
         }
 
-        int kol = 1;
+        int count = 1;
         for (int i=1;i<time.size();i++){
-           if (!TimeCompareUtil.compareTime(time.get(i-1),time.get(i))){
-                Tuple result = new Tuple(kol, "session");
+           if (!TimeCompareUtil.compareTime(time.get(i - 1), time.get(i))){
+                Tuple result = new Tuple(count, "session");
                 bufferCall.getOutputCollector().add( result );
-                kol=1;
+                count=1;
             } else {
-                kol++;
+                count++;
             }
 
         }
-        Tuple result = new Tuple(kol);
+        Tuple result = new Tuple(count, "session");
         bufferCall.getOutputCollector().add( result );
     }
 }
